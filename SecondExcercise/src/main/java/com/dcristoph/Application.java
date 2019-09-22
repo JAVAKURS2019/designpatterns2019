@@ -1,8 +1,15 @@
 package com.dcristoph;
 
+
 public class Application {
 
-    public static void main(String[] args){
+    public static void generateText(Type classType){
+        String connect =null;
+        switch(classType){
+            case FIRSTCLASS:
+                connect= FirstClass.;
+        }
+
         FirstClass fc = new FirstClass();
         SecondClass sc = new SecondClass();
         ThirdClass tc = new ThirdClass();
@@ -14,4 +21,9 @@ public class Application {
         System.out.println(tc.getText());
         System.out.println(tc.getAnotherText());
     }
+}
+enum Type{
+    FIRSTCLASS,
+    SECONDCLASS,
+    THIRDCLASS
 }
