@@ -18,83 +18,91 @@ public class Person {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getCity() {
         return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
     public int getHouseNumber() {
         return houseNumber;
-    }
-
-    public void setHouseNumber(int houseNumber) {
-        this.houseNumber = houseNumber;
     }
 
     public int getTelephoneNumber() {
         return telephoneNumber;
     }
 
-    public void setTelephoneNumber(int telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
-    }
-
     public Date getBirthDate() {
         return birthDate;
-    }
-
-    public void setBirthDate(Date brithDate) {
-        this.birthDate = brithDate;
     }
 
     public String getSentence() {
         return sentence;
     }
 
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
+    @Override
+    public String toString() {
+        return "Person{" +
+                "number=" + number +
+                ", firstName:" + firstName + " lastName:'" + lastName + "\n"+
+                "city:" + city + '\'' +
+                " street:" + street + '\'' +
+                " houseNumber:" + houseNumber + "\n" +
+                ", telephoneNumber:" + telephoneNumber +
+                ", birthDate:" + birthDate +
+                ", sentence:" + sentence + '\'' +
+                '}';
     }
 
-    public Person(int number, String firstName, String lastName, String city, String street, int houseNumber, int telephoneNumber, Date birthDate, String sentence) {
-        this.number = number;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.street = street;
-        this.houseNumber = houseNumber;
-        this.telephoneNumber = telephoneNumber;
-        this.birthDate = birthDate;
-        this.sentence = sentence;
+
+    public Person(Builder myBuilder) {
+        this.number = myBuilder.number;
+        this.firstName = myBuilder.firstName;
+        this.lastName = myBuilder.lastName;
+        this.city = myBuilder.city;
+        this.street = myBuilder.street;
+        this.houseNumber = myBuilder.houseNumber;
+        this.telephoneNumber = myBuilder.telephoneNumber;
+        this.birthDate = myBuilder.birthDate;
+        this.sentence = myBuilder.sentence;
+    }
+
+    public static class Builder {
+        private int number;
+        private String firstName;
+        private String lastName;
+        private String city;
+        private String street;
+        private int houseNumber;
+        private int telephoneNumber;
+        private Date birthDate;
+        private String sentence;
+
+        public Builder(int numberr, String firstNamee, String lastNamee, String cityy, String streett, int houseNumberr, int telephoneNumberr,
+                       Date birthDatee, String sentencee) {
+            this.number = numberr;
+            this.firstName = firstNamee;
+            this.lastName = lastNamee;
+            this.city = cityy;
+            this.street = streett;
+            this.houseNumber = houseNumberr;
+            this.telephoneNumber = telephoneNumberr;
+            this.birthDate = birthDatee;
+            this.sentence = sentencee;
+        }
+
+        public Person build (){
+            return new Person(this);
+        }
     }
 }
