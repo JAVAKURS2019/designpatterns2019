@@ -1,17 +1,20 @@
 package com.dcristoph;
 
 public class Application {
+    private Chain c1;
 
-    public static void main(String[] args){
-        FirstClass fc = new FirstClass();
-        SecondClass sc = new SecondClass();
-        ThirdClass tc = new ThirdClass();
+    public Application() {
+        this.c1 = new FirstClass();
+        Chain c2 = new SecondClass();
+        Chain c3 = new ThirdClass();
 
-        System.out.println(fc.getText());
-        System.out.println(fc.getAnotherText());
-        System.out.println(sc.getText());
-        System.out.println(sc.getAnotherText());
-        System.out.println(tc.getText());
-        System.out.println(tc.getAnotherText());
+        c1.setNextChain(c2);
+        c2.setNextChain(c3);
+    }
+
+    public static void main(String[] args) {
+        Application application = new Application();
+
+        application.c1.doSmth();
     }
 }
