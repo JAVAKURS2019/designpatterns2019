@@ -14,87 +14,78 @@ public class Person {
     private Date birthDate;
     private String sentence;
 
-    public int getNumber() {
-        return number;
+    public static final class Builder {
+        private int number;
+        private String firstName;
+        private String lastName;
+        private String city;
+        private String street;
+        private int houseNumber;
+        private int telephoneNumber;
+        private Date birthDate;
+        private String sentence;
+
+
+        public Builder number(int number) {
+            this.number = number;
+            return this;
+        }
+
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public Builder city(String city) {
+            this.city = city;
+            return this;
+        }
+
+        public Builder street(String street) {
+            this.street = street;
+            return this;
+        }
+
+        public Builder houseNumber(int houseNumber) {
+            this.houseNumber = houseNumber;
+            return this;
+        }
+
+        public Builder telephoneNumber(int telephoneNumber) {
+            this.telephoneNumber = telephoneNumber;
+            return this;
+        }
+
+        public Builder birthDate(Date birthDate) {
+            this.birthDate = birthDate;
+            return this;
+        }
+
+        public Builder sentence(String sentence) {
+            this.sentence = sentence;
+            return this;
+        }
+
+        public Person build() {
+            return new Person(this);
+        }
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
+    public Person(Builder builder) {
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public int getHouseNumber() {
-        return houseNumber;
-    }
-
-    public void setHouseNumber(int houseNumber) {
-        this.houseNumber = houseNumber;
-    }
-
-    public int getTelephoneNumber() {
-        return telephoneNumber;
-    }
-
-    public void setTelephoneNumber(int telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date brithDate) {
-        this.birthDate = brithDate;
-    }
-
-    public String getSentence() {
-        return sentence;
-    }
-
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
-    }
-
-    public Person(int number, String firstName, String lastName, String city, String street, int houseNumber, int telephoneNumber, Date birthDate, String sentence) {
-        this.number = number;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.street = street;
-        this.houseNumber = houseNumber;
-        this.telephoneNumber = telephoneNumber;
-        this.birthDate = birthDate;
-        this.sentence = sentence;
+        this.number = builder.number;
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.city = builder.city;
+        this.street = builder.street;
+        this.houseNumber = builder.houseNumber;
+        this.telephoneNumber = builder.telephoneNumber;
+        this.birthDate = builder.birthDate;
+        this.sentence = builder.sentence;
     }
 }
