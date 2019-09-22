@@ -1,12 +1,20 @@
 package com.dcristoph;
 
-public class ThirdClass {
+public class ThirdClass implements Chain {
+    private Chain chain;
 
-    public String getText(){
-        return "ThirdClass";
+    @Override
+    public void nextChain(Chain nextChain) {
+        this.chain = nextChain;
     }
 
-    public String getAnotherText(){
+    @Override
+    public void getText() {
+        System.out.println("ThirdClass");
+    }
+
+    @Override
+    public String getAnotherText() {
         return "ThirdClass-another";
     }
 }
