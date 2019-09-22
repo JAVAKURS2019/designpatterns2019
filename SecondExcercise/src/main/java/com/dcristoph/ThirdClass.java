@@ -1,6 +1,6 @@
 package com.dcristoph;
 
-public class ThirdClass {
+public class ThirdClass implements MyClass {
 
     public String getText(){
         return "ThirdClass";

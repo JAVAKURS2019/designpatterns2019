@@ -1,6 +1,6 @@
 package com.dcristoph;
 
-public class SecondClass {
+public class SecondClass implements MyClass {
 
     public String getText(){
         return "SecondClass";
